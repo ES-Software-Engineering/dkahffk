@@ -3,6 +3,7 @@
 //
 
 #include "JobInformations.h"
+#include <iostream>
 
 void JobInformations::RegisterJobPosting(string work, string deadline, int numOfPeople, Account curAccount) {
     jobInformations.push_back(JobInformation(curAccount.id, curAccount.name, curAccount.num, work, deadline, numOfPeople));
@@ -34,6 +35,9 @@ vector<JobInformation> JobInformations::SearchJobPosting(string name) {
 
 vector<JobInformation> JobInformations::PrintApplyInfo(Account curAccount) {
     vector<JobInformation> ret;
+    std::cout << "JobInformations : " << &jobInformations << std::endl;
+    std::cout << jobInformations[0].appliedAccount.size() << std::endl;
+
 
     for (int i = 0; i < (int)jobInformations.size(); ++i) {
         for (int j = 0; j < (int)jobInformations[i].appliedAccount.size(); ++j) {

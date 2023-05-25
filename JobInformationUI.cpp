@@ -5,6 +5,7 @@
 #include "JobInformationUI.h"
 
 #include "JobInformationSystem.h"
+#include <iostream>
 
 
 void JobInformationUI::RegisterJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
@@ -20,7 +21,7 @@ void JobInformationUI::RegisterJobPosting(ifstream &fin, ofstream &fout, Account
 }
 
 void JobInformationUI::PrintMyJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
-    fout << "3.2 등록된 채용 정보 조회" << endl;
+    fout << "3.2. 등록된 채용 정보 조회" << endl;
 
     vector<JobInformation> matchingJobs = jobInformationSystem->PrintMyJobPosting(curAccount);
 
@@ -31,7 +32,7 @@ void JobInformationUI::PrintMyJobPosting(ifstream &fin, ofstream &fout, Account 
 }
 
 void JobInformationUI::SearchJobPosting(ifstream &fin, ofstream &fout) {
-    fout << "4.1 채용 정보 검색" << endl;
+    fout << "4.1. 채용 정보 검색" << endl;
 
     string name;
     fin >> name;
@@ -54,12 +55,12 @@ void JobInformationUI::PrintApplyInfo(ifstream &fin, ofstream &fout, Account cur
 }
 
 void JobInformationUI::ApplyJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
-    fout << "4.2 채용 지원" << endl;
+    fout << "4.2. 채용 지원" << endl;
 
     int businessNum;
     fin >> businessNum;
 
     JobInformation appliedJob = jobInformationSystem->ApplyJobInformation(businessNum, curAccount);
-
+ 
     fout << "> " << appliedJob.name << ' ' << appliedJob.num << ' ' << appliedJob.work << endl;
 }

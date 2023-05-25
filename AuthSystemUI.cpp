@@ -7,7 +7,7 @@
 #include "AuthSystem.h"
 
 void AuthSystemUI::Login(ifstream& fin, ofstream& fout) {
-    fout << "2.1 로그인" << endl;
+    fout << "2.1. 로그인" << endl;
 
     string id, pw;
     fin >> id >> pw;
@@ -19,12 +19,12 @@ void AuthSystemUI::Login(ifstream& fin, ofstream& fout) {
 }
 
 void AuthSystemUI::Logout(ifstream& fin, ofstream& fout) {
-    fout << "2.2 로그아웃" << endl;
+    fout << "2.2. 로그아웃" << endl;
     fout << "> " << authSystem->RequestLogout() << endl;
 }
 
 void AuthSystemUI::Register(ifstream& fin, ofstream& fout) {
-    fout << "1.1 회원가입" << endl;
+    fout << "1.1. 회원가입" << endl;
     int type, num;
     string name, id, pw;
     fin >> type;
@@ -35,7 +35,7 @@ void AuthSystemUI::Register(ifstream& fin, ofstream& fout) {
 }
 
 void AuthSystemUI::Withdraw(ifstream& fin, ofstream& fout) {
-    fout << "1.2 회원탈퇴" << endl;
+    fout << "1.2. 회원탈퇴" << endl;
     string id;
     fin >> id;
 

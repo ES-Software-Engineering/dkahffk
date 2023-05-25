@@ -28,8 +28,8 @@ public:
     vector<JobInformation> PrintMyJobPosting(Account curAccount);
     vector<JobInformation> SearchJobPosting(string name);
     vector<JobInformation> PrintApplyInfo(Account curAccount);
-    vector<JobInformation> getJobInformations() {
-        return jobInformations;
+    vector<JobInformation>* getJobInformations() {
+        return &jobInformations;
     };
 };
 
