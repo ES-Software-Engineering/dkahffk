@@ -46,12 +46,13 @@ void MainSystem::run() {
             authSystemUI->Logout(fin, fout);
         } else if (menuLv1 == 3 && menuLv2 == 1) { // 채용 정보 등록
             jobInformationUI->RegisterJobPosting(fin, fout, GetCurrentAccount());
-        } else if (menuLv1 == 3 && menuLv2 == 2) { // 등록된 채용 정보 조회
+        } else if (menuLv1 == 3 && menuLv2 == 2) { // 등록된 채용 정보 조회 TODO
             jobInformationUI->PrintMyJobPosting(fin, fout, GetCurrentAccount());
         } else if (menuLv1 == 4 && menuLv2 == 1) { // 채용 정보 검색
-            jobInformationUI->SearchJobPosting(fin, fout);
-        } else if (menuLv1 == 4 && menuLv2 == 2) { // 채용 지원;
-        } else if (menuLv1 == 4 && menuLv2 == 3) { // 지원 정보 조회
+            jobInformationUI->SearchJobPosting(fin, fout, GetCurrentAccount());
+        } else if (menuLv1 == 4 && menuLv2 == 2) {
+            jobInformationUI->ApplyJobPosting(fin, fout, GetCurrentAccount()); // 채용 지원;TODO
+        } else if (menuLv1 == 4 && menuLv2 == 3) { // 지원 정보 조회 TODO
         } else if (menuLv1 == 6 && menuLv2 == 1) { // 종료
             cout << "6.1. 종료" << endl;
             break;

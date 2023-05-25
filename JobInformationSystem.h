@@ -20,7 +20,9 @@ public:
     JobInformationUI* jobInformationUI;
 
     void RegisterJobPosting(string work, string deadline, int numOfPeople, Account curAccount);
+    vector<JobInformation> ListMyJobPosting(Account curAccout);
     vector<JobInformation> SearchJobPosting(Account curAccount);
+    JobInformation ApplyJobInformation(int businessNum, Account curAccount);
 };
 
 

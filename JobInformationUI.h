@@ -22,7 +22,7 @@ public:
     void RegisterJobPosting(ifstream& fin, ofstream& fout, Account curAccount);
     void PrintMyJobPosting(ifstream& fin, ofstream& fout, Account curAccount);
     void SearchJobPosting(ifstream& fin, ofstream& fout, Account curAccount);
-    void ApplyJobPosting(ifstream& fin, ofstream& fout);
+    void ApplyJobPosting(ifstream& fin, ofstream& fout, Account curAccount);
     void PrintApplyInfo(ifstream& fin, ofstream& fout);
 };
 

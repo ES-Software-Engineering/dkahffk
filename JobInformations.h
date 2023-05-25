@@ -23,6 +23,9 @@ class JobInformations {
 private:
     vector<JobInformation> jobInformations;
 public:
+    vector<JobInformation> getJobInformations() {
+        return jobInformations;
+    };
     void RegisterJobPosting(string work, string deadline, int numOfPeople, Account curAccount);
     vector<JobInformation> SearchJobPosting(Account curAccount);
 };
