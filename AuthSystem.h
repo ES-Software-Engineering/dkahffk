@@ -16,7 +16,10 @@ using namespace std;
 
 
 
-
+/*
+   클래스 이름 : AuthSystem
+   기능     : 유저 관리 관련 control class
+*/
 class AuthSystem {
 private:
     Accounts accounts;

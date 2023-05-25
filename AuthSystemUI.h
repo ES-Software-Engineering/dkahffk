@@ -12,6 +12,10 @@ using namespace std;
 
 class AuthSystem;
 
+/*
+   클래스 이름 : AuthSystemUI
+   기능     : 유저 관리 관련 boundary class
+*/
 class AuthSystemUI {
 private:
 

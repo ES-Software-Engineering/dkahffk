@@ -6,6 +6,12 @@
 
 #include "AuthSystem.h"
 
+/*
+   함수 이름 : AuthSystemUI::Login()
+   기능     : 사용자 정보를 입력받고 로그인 처리
+   전달 인자 : ifstream& fin, ofstream& fout
+   반환값    : 없음
+*/
 void AuthSystemUI::Login(ifstream& fin, ofstream& fout) {
     fout << "2.1. 로그인" << endl;
 
@@ -18,11 +24,23 @@ void AuthSystemUI::Login(ifstream& fin, ofstream& fout) {
 
 }
 
+/*
+   함수 이름 : AuthSystemUI::Logout()
+   기능     : 사용자 정보를 입력받고 로그아웃 처리
+   전달 인자 : ifstream& fin, ofstream& fout
+   반환값    : 없음
+*/
 void AuthSystemUI::Logout(ifstream& fin, ofstream& fout) {
     fout << "2.2. 로그아웃" << endl;
     fout << "> " << authSystem->RequestLogout() << endl;
 }
 
+/*
+   함수 이름 : AuthSystemUI::Register()
+   기능     : 사용자 정보를 입력받고 회원가입 처리
+   전달 인자 : ifstream& fin, ofstream& fout
+   반환값    : 없음
+*/
 void AuthSystemUI::Register(ifstream& fin, ofstream& fout) {
     fout << "1.1. 회원가입" << endl;
     int type, num;
@@ -34,6 +52,12 @@ void AuthSystemUI::Register(ifstream& fin, ofstream& fout) {
     fout << "> " << type << ' ' << name << ' ' << num << ' ' << id << ' ' << pw << endl;
 }
 
+/*
+   함수 이름 : AuthSystemUI::Withdraw()
+   기능     : 사용자 정보를 입력받고 회원탈퇴 처리
+   전달 인자 : ifstream& fin, ofstream& fout
+   반환값    : 없음
+*/
 void AuthSystemUI::Withdraw(ifstream& fin, ofstream& fout) {
     fout << "1.2. 회원탈퇴" << endl;
     string id;

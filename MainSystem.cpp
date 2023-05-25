@@ -25,6 +25,12 @@ MainSystem::MainSystem() {
     jobInformationUI->jobInformationSystem = jobInformationSystem;
 }
 
+/*
+   함수 이름 : MainSystem::~MainSystem()
+   기능     : 클래스 인스턴스 할당해제
+   전달 인자 : 없음
+   반환값    : 없음
+*/
 MainSystem::~MainSystem() {
     delete authSystem;
     delete authSystemUI;
@@ -32,11 +38,22 @@ MainSystem::~MainSystem() {
     delete jobInformationUI;
 }
 
+/*
+   함수 이름 : MainSystem::GetCurrentAccount()
+   기능     : 현재 접속한 유저 Account 반환
+   전달 인자 : Account
+   반환값    : 없음
+*/
 Account MainSystem::GetCurrentAccount() {
     return authSystem->GetCurrentAccount();
 }
 
-
+/*
+   함수 이름 : MainSystem::run()
+   기능     : 입력 state에 따른 전체 시스템 실행
+   전달 인자 : 없음
+   반환값    : 없음
+*/
 void MainSystem::run() {
     fin.open(inputFileName);
     fout.open(outputFileName);

@@ -10,7 +10,10 @@
 
 using namespace std;
 
-
+/*
+   클래스 이름 : JobInformation
+   기능     : 채용 정보 저장
+*/
 class JobInformation {
 public:
     string id, name;
@@ -21,6 +24,10 @@ public:
     JobInformation(string id, string name, int num, string work, string deadline, int numOfPeople) : id(id), name(name), num(num), work(work), deadline(deadline), numOfPeople(numOfPeople) {};
 };
 
+/*
+   클래스 이름 : JobInformations
+   기능     : JobInformation의 collection class 
+*/
 class JobInformations {
 private:
     vector<JobInformation> jobInformations;

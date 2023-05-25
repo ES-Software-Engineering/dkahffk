@@ -10,6 +10,11 @@
 
 using namespace std;
 
+
+/*
+   클래스 이름 : Account
+   기능     : 유저정보 저장
+*/
 class Account {
 public:
     string id, password, name;
@@ -18,7 +23,10 @@ public:
 
 };
 
-
+/*
+   클래스 이름 : Accounts
+   기능     : Account의 collection class
+*/
 class Accounts {
 private:
     vector<Account> accounts;

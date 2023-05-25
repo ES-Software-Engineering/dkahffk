@@ -12,6 +12,10 @@
 
 using namespace std;
 
+/*
+   클래스 이름 : JobInformationSystem
+   기능     : 채용 정보 등록 및 관리 관련 처리를 위한 control
+*/
 class JobInformationSystem {
 private:
     JobInformations jobInformations;

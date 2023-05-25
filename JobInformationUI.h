@@ -13,6 +13,11 @@ using namespace std;
 
 class JobInformationSystem;
 
+
+/*
+   클래스 이름 : JobInformationUI
+   기능     : 채용 정보와 관련된 처리를 담당하는 boundary class
+*/
 class JobInformationUI {
 private:
 
