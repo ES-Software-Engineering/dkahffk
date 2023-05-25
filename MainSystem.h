@@ -20,6 +20,9 @@ private:
     ifstream fin;
     ofstream fout;
 
+    const string inputFileName = "input.txt";
+    const string outputFileName = "output.txt";
+
     AuthSystem* authSystem;
     AuthSystemUI* authSystemUI;
 

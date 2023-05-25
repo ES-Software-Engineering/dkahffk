@@ -19,18 +19,46 @@ void JobInformationUI::RegisterJobPosting(ifstream &fin, ofstream &fout, Account
 }
 
 void JobInformationUI::PrintMyJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
+    fout << "3.2 등록된 채용 정보 조회" << endl;
+
+    vector<JobInformation> matchingJobs = jobInformationSystem->PrintMyJobPosting(curAccount);
+
+    for (auto it : matchingJobs) {
+        fout << "> " << it.work << ' ' << it.numOfPeople << ' ' << it.deadline << endl;
+    }
 
 }
 
-void JobInformationUI::SearchJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
+void JobInformationUI::SearchJobPosting(ifstream &fin, ofstream &fout) {
     fout << "4.1 채용 정보 검색" << endl;
 
     string name;
     fin >> name;
 
-    vector<JobInformation> matchingJobs = jobInformationSystem->SearchJobPosting(curAccount);
+    vector<JobInformation> matchingJobs = jobInformationSystem->SearchJobPosting(name);
 
     for (auto it : matchingJobs) {
         fout << "> " << it.name << ' ' << it.num << ' ' << it.work << ' ' << it.numOfPeople << ' ' << it.deadline << endl;
     }
+}
+
+void JobInformationUI::PrintApplyInfo(ifstream &fin, ofstream &fout, Account curAccount) {
+    fout << "4.3. 지원 정보 조회" << endl;
+
+    vector<JobInformation> matchingJobs = jobInformationSystem->PrintApplyInfo(curAccount);
+
+    for (auto it : matchingJobs) {
+        fout << "> " << it.name << ' ' << it.num << ' ' << it.work << ' ' << it.numOfPeople << ' ' << it.deadline << endl;
+    }
+}
+
+void JobInformationUI::ApplyJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
+    fout << "4.2 채용 지원" << endl;
+
+    int businessNum;
+    fin >> businessNum;
+
+    JobInformation appliedJob = jobInformationSystem->ApplyJobInformation(businessNum, curAccount);
+
+    fout << "> " << appliedJob.name << ' ' << appliedJob.num << ' ' << appliedJob.work << endl;
 }

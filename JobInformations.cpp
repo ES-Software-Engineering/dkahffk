@@ -8,12 +8,38 @@ void JobInformations::RegisterJobPosting(string work, string deadline, int numOf
     jobInformations.push_back(JobInformation(curAccount.id, curAccount.name, curAccount.num, work, deadline, numOfPeople));
 }
 
-vector<JobInformation> JobInformations::SearchJobPosting(Account curAccount) {
+vector<JobInformation> JobInformations::PrintMyJobPosting(Account curAccount) {
     vector<JobInformation> ret;
 
     for (int i = 0; i < (int)jobInformations.size(); ++i) {
-        if (curAccount.id == jobInformations[i].id) {
+        if (jobInformations[i].num == curAccount.num) {
             ret.push_back(jobInformations[i]);
+        }
+    }
+
+    return ret;
+}
+
+vector<JobInformation> JobInformations::SearchJobPosting(string name) {
+    vector<JobInformation> ret;
+
+    for (int i = 0; i < (int)jobInformations.size(); ++i) {
+        if (name == jobInformations[i].name) {
+            ret.push_back(jobInformations[i]);
+        }
+    }
+
+    return ret;
+}
+
+vector<JobInformation> JobInformations::PrintApplyInfo(Account curAccount) {
+    vector<JobInformation> ret;
+
+    for (int i = 0; i < (int)jobInformations.size(); ++i) {
+        for (int j = 0; j < (int)jobInformations[i].appliedAccount.size(); ++j) {
+            if (jobInformations[i].appliedAccount[j].id == curAccount.id) {
+                ret.push_back(jobInformations[i]);
+            }
         }
     }
 

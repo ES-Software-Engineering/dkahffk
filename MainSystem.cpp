@@ -31,10 +31,12 @@ Account MainSystem::GetCurrentAccount() {
 
 
 void MainSystem::run() {
+    fin.open(inputFileName);
+    fout.open(outputFileName);
 
-    while (true) {
+    while (!fin.eof()) {
         int menuLv1, menuLv2;
-        cin >> menuLv1 >> menuLv2;
+        fin >> menuLv1 >> menuLv2;
 
         if (menuLv1 == 1 && menuLv2 == 1) { // 회원 가입
             authSystemUI->Register(fin, fout);
@@ -51,9 +53,11 @@ void MainSystem::run() {
         } else if (menuLv1 == 4 && menuLv2 == 1) { // 채용 정보 검색
             jobInformationUI->SearchJobPosting(fin, fout);
         } else if (menuLv1 == 4 && menuLv2 == 2) { // 채용 지원;
+            jobInformationUI->ApplyJobPosting(fin, fout, GetCurrentAccount());
         } else if (menuLv1 == 4 && menuLv2 == 3) { // 지원 정보 조회
+            jobInformationUI->PrintApplyInfo(fin, fout, GetCurrentAccount());
         } else if (menuLv1 == 6 && menuLv2 == 1) { // 종료
-            cout << "6.1. 종료" << endl;
+            fout << "6.1. 종료" << endl;
             break;
         }
     }
