@@ -26,7 +26,7 @@ private:
 
 public:
     Account CheckAuth(string id, string pw);
-    int RequestLogout();
+    string RequestLogout();
     void AddAccount(int type, string id, string pw, string name, int num);
     int RequestWithdraw(string id);
     Account GetCurrentAccount();

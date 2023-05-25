@@ -23,7 +23,7 @@ private:
 public:
     AuthSystemUI* authSystemUI;
     void AddAccount(int type, string id, string pw, string name, int num);
-    int RequestLogout();
+    string RequestLogout();
     Account CheckAuth(string id, string pw);
     int RequestWithdraw(string id);
     Account GetCurrentAccount();

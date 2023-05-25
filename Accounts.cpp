@@ -7,12 +7,14 @@
 Account Accounts::CheckAuth(string id, string pw) {
     for (int i = 0; i < (int)accounts.size(); ++i) {
         if (accounts[i].id == id && accounts[i].password == pw) {
+            loginAccountIdx = i;
             return accounts[i];
         }
     }
 }
-int Accounts::RequestLogout() {
-    int ret = loginAccountIdx;
+
+string Accounts::RequestLogout() {
+    string ret = accounts[loginAccountIdx].id;
     loginAccountIdx = -1;
     return ret;
 }

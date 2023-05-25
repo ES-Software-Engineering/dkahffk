@@ -15,6 +15,7 @@ void AuthSystemUI::Login(ifstream& fin, ofstream& fout) {
     Account res = authSystem->CheckAuth(id, pw);
 
     fout << "> " << res.id << ' ' << res.password << endl;
+
 }
 
 void AuthSystemUI::Logout(ifstream& fin, ofstream& fout) {
@@ -30,7 +31,7 @@ void AuthSystemUI::Register(ifstream& fin, ofstream& fout) {
 
     fin >> name >> num >> id >> pw;
     authSystem->AddAccount(type, id, pw, name, num);
-
+    fout << "> " << type << ' ' << name << ' ' << num << ' ' << id << ' ' << pw << endl;
 }
 
 void AuthSystemUI::Withdraw(ifstream& fin, ofstream& fout) {

@@ -13,7 +13,7 @@ Account AuthSystem::CheckAuth(string id, string pw) {
     return accounts.CheckAuth(id, pw);
 }
 
-int AuthSystem::RequestLogout() {
+string AuthSystem::RequestLogout() {
     return accounts.RequestLogout();
 }
 

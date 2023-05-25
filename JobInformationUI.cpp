@@ -6,14 +6,15 @@
 
 #include "JobInformationSystem.h"
 
+
 void JobInformationUI::RegisterJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {
+
     fout << "3.1. 채용 정보 등록" << endl;
 
     string work, deadline;
     int numOfPeople;
     fin >> work >> numOfPeople >> deadline;
     fout << "> " << work << ' ' << numOfPeople << ' ' << deadline << endl;
-
 
     jobInformationSystem->RegisterJobPosting(work, deadline, numOfPeople, curAccount);
 }
