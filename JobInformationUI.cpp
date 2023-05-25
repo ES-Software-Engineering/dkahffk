@@ -5,7 +5,6 @@
 #include "JobInformationUI.h"
 
 #include "JobInformationSystem.h"
-#include <iostream>
 
 
 void JobInformationUI::RegisterJobPosting(ifstream &fin, ofstream &fout, Account curAccount) {

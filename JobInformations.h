@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 class JobInformation {
 public:
     string id, name;
@@ -28,9 +29,7 @@ public:
     vector<JobInformation> PrintMyJobPosting(Account curAccount);
     vector<JobInformation> SearchJobPosting(string name);
     vector<JobInformation> PrintApplyInfo(Account curAccount);
-    vector<JobInformation>* getJobInformations() {
-        return &jobInformations;
-    };
+    JobInformation ApplyJobInformation(int businessNum, Account curAccount);
 };
 
 

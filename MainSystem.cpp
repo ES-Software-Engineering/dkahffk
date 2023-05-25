@@ -4,6 +4,13 @@
 
 #include "MainSystem.h"
 
+
+/*
+   함수 이름 : MainSystem::MainSystem()
+   기능     : 클래스 인스턴스를 생성
+   전달 인자 : 없음
+   반환값    : 없음
+*/
 MainSystem::MainSystem() {
     authSystem = new AuthSystem;
     authSystemUI = new AuthSystemUI;

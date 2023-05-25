@@ -15,6 +15,10 @@
 
 using namespace std;
 
+/*
+   클래스 이름 : MainSystem
+   기능     : 전체 시스템 런타임에 필요한 파일, 클래스 인스턴스를 생성 및 동작하게 함
+*/
 class MainSystem {
 private:
     ifstream fin;
